@@ -3,4 +3,4 @@ Normal form in OpenDayLight(ODL) development.
 
 
 
-Project archetype based on **org.opendaylight.odlparent:odlparent:1.8.2-Carbon**
+Project archetype based on **org.opendaylight.odlparent : odlparent : 1.8.2-Carbon**, release version
