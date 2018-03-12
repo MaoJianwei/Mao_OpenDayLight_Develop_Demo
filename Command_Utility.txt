@@ -4,15 +4,15 @@
 
 
 
-
-
 # setup: DLUX, YangMan, YangUI, YangUtils, YangVisualizer, RestConf, OpenFlow
 
 feature:install odl-dlux-core odl-dluxapps-applications odl-dluxapps-nodes odl-dluxapps-topology odl-dluxapps-yangman odl-dluxapps-yangui odl-dluxapps-yangutils odl-dluxapps-yangvisualizer odl-restconf-all odl-openflowplugin-flow-services
 
 
 
-
 # Deploy ODL internal App
 
 kar:install file:/home/mao/OpenDayLight/mao/MaoOdlDemo/features/target/MaoOdlDemo-features-0.1.0-SNAPSHOT.kar
+
+
+
