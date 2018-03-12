@@ -26,14 +26,6 @@ public class MaoPacketInListener implements PacketProcessingListener {
     }
 
 
-//    private NotificationPublishService notificationPublishService;
-//
-//
-//    public MaoPacketInListener(NotificationPublishService notificationPublishService) {
-//        this.notificationPublishService = notificationPublishService;
-//    }
-
-
     @Override
     public void onPacketReceived(PacketReceived packetReceived) {
         if (packetReceived != null) {

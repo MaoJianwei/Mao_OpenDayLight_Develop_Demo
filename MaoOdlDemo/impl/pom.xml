@@ -70,8 +70,6 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
             <version>0.4.2-Carbon</version>
         </dependency>
 
-
-
         <!-- Packet-out's Action -->
         <dependency>
             <groupId>org.opendaylight.openflowplugin.model</groupId>
