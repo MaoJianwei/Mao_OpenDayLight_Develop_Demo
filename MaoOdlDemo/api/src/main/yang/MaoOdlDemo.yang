@@ -1,0 +1,97 @@
+module MaoOdlDemo {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:MaoOdlDemo";
+    prefix "MaoOdlDemo";
+
+    revision "2015-01-05" {
+        description "Initial revision of MaoOdlDemo model";
+    }
+
+    import config { prefix config; revision-date 2013-04-05; }
+    import opendaylight-md-sal-binding { prefix md-sal-binding; revision-date 2013-10-28;}
+
+
+    import network-topology { prefix nt; revision-date 2013-10-21; }
+    import yang-ext { prefix ext; revision-date "2013-07-09"; }
+
+
+    import ietf-inet-types {
+      prefix inet;
+      revision-date 2013-07-15;
+    }
+
+    typedef bandwidth-profile {
+        type enumeration {
+            enum gold {
+                value 800;
+            }
+            enum silver {
+                value 100;
+            }
+            enum bronze {
+                value 50;
+            }
+        }
+        default "bronze";
+    }
+
+
+    container scheduled-bandwidth {
+        list limit {
+            key "source destination";
+
+            leaf source {
+                type inet:ip-address;
+                mandatory true;
+                description "source ip address";
+            }
+
+            leaf destination {
+                type inet:ip-address;
+                mandatory true;
+                description "destination ip address";
+            }
+
+            leaf bandwidth {
+                type bandwidth-profile;
+                mandatory true;
+                description "bandwidth profile";
+            }
+
+            leaf duration-sec {
+                type int32;
+                default 0;
+                description "page 116";
+            }
+        }
+    }
+
+    rpc mao-hello-world {
+        input {
+            leaf name {
+                type string;
+            }
+        }
+        output {
+            leaf greeting {
+                type string;
+            }
+        }
+    }
+
+
+
+
+
+
+
+    augment "/nt:network-topology/nt:topology/nt:node" {
+        ext:augment-identifier "beijing-tower";
+
+        leaf beijing-frequency {
+            type int32;
+            default 1080;
+            description "beijing tower frequency";
+        }
+    }
+}
